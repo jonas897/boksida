@@ -103,8 +103,51 @@ function createbook($conn, $bookname, $bookauthor, $bookdescription, $bookillust
     }
 
 
+    function selectSortedBooksPop($conn, $amount){
+        $selectbooksLimited = $conn->prepare('SELECT *
+        FROM table_book
+        INNER JOIN table_genre
+        ON table_book.genre_id_fk = table_genre.genre_id
+        INNER JOIN table_language
+        ON table_book.language_id_fk = table_language.language_id
+        WHERE genre_id_fk = 2
+        LIMIT :amount');
+
+        $selectbooksLimited->bindparam(':amount' , $amount, PDO::PARAM_INT);
+        $selectbooksLimited->execute();
+
+        return $selectbooksLimited;
+    };
 
 
+    function selectSortedBooksDesc($conn, $amount){
+        $selectbooksDesc = $conn->prepare('SELECT *
+                                              FROM table_book
+                                              INNER JOIN table_genre ON table_book.genre_id_fk = table_genre.genre_id
+                                              INNER JOIN table_language ON table_book.language_id_fk = table_language.language_id
+                                              ORDER BY book_created DESC
+                                              LIMIT :amount');
+
+        $selectbooksDesc->bindParam(':amount', $amount, PDO::PARAM_INT);
+        $selectbooksDesc->execute();
+        return $selectbooksDesc;
+    }
+
+
+    function selectSortedBooksFeatured($conn){
+        $selectbooksFeatured = $conn->prepare('SELECT *
+        FROM table_book
+        INNER JOIN table_genre
+        ON table_book.genre_id_fk = table_genre.genre_id
+        INNER JOIN table_language
+        ON table_book.language_id_fk = table_language.language_id
+        WHERE book_featured = 1
+        ');
+         $selectbooksFeatured->execute();
+        return $selectbooksFeatured;
+    };
+
+    
         function deleteBook($conn, $car){
         $deleteBookQuerry = $conn->prepare('UPDATE table_book SET book_status_id_fk  = 2 WHERE book_id = :cid') ;
         $deleteBookQuerry->bindparam(':cid',$car, PDO::PARAM_INT);
