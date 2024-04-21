@@ -154,4 +154,29 @@ function createbook($conn, $bookname, $bookauthor, $bookdescription, $bookillust
         $deleteBookQuerry->execute();
         return true;
     }
+
+
+    function searchBooks($conn, $query) {
+        // Initialize variable to store found books
+        $foundBooks = array();
+        
+        // Prepare a SELECT query to fetch books from the database where either the name or author matches the search query
+        $stmt = $conn->prepare("SELECT * FROM table_book WHERE book_name LIKE :search_query OR book_author LIKE :search_query");
+        
+        // Bind the search query parameter
+        $search_query = "%$query%"; // Add wildcard '%' to search for partial matches
+        $stmt->bindParam(':search_query', $search_query, PDO::PARAM_STR);
+        
+        // Execute the query
+        $stmt->execute();
+        
+        // Fetch matching books
+        $foundBooks = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+        return $foundBooks;
+    }
+
+
+
+
 ?>  

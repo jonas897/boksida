@@ -1,6 +1,6 @@
-<footer id="footer" class="text-center text-lg-start">
+<footer id="footer" class="text-center text-lg-start ">
   <!-- Grid container -->
-  <div class="container p-4">
+  <div class="container p-4 ">
     <!--Grid row-->
     <div class="row">
       <!--Grid column-->
@@ -34,7 +34,7 @@
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
     © 2023 Copyright:
-    <a class="text-dark" href="https://mdbootstrap.com/">Jonas</a>
+    <a class="text-dark" href="https://mdbootstrap.com/">jonas</a>
   </div>
   <!-- Copyright -->
 </footer>

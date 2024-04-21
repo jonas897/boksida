@@ -44,6 +44,17 @@
   }
 
 
+  .hero-section {
+    background-image: url('img/books.jpg'); 
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    padding: 100px 0;
+    text-align: center;
+  }
+
+
+
 
 
 
@@ -82,3 +93,5 @@
   .btn-block {
     width: 100%; /* Make button full width */
   }
+
+
