@@ -39,6 +39,8 @@ if(isset($_POST['logout-button'])){
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
+	<a class="nav-link" href="about.php">om oss</a>
+	<a class="nav-link" href="kontakt.php">kontakt sidan</a>
 	<li class="nav-item">
 	</li>
     </ul>
@@ -49,7 +51,6 @@ if(isset($_POST['logout-button'])){
   ?>
   <form method="POST" action="">
 	<input type="submit" name="logout-button" value="logout" role="button" class="button-92 me-2">
-	
 		<?php 
 
 if($user->checkUserRole(1)){

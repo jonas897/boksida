@@ -4,7 +4,7 @@ include "header.php";
 	if(!$user->checkLoginStatus()){
 		$user->redirect("index.php");
 	}
-	
+		
 		$selectedbooks = selectbooks($conn);
 
 		$selectedBooksFeatured = selectSortedBooksFeatured($conn);

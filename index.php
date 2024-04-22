@@ -2,6 +2,8 @@
 include "header.php";
 
 
+
+
     $selectedBooksPop = selectSortedBooksPop($conn , 3);
     $selectedBooksDesc = selectSortedBooksDesc($conn , 3);
     $selectedBooksFeatured = selectSortedBooksFeatured($conn);
@@ -106,36 +108,73 @@ echo "</div>
 ?>
 
 
-
 <div class="container">
+    <div class="row">
+        <!-- First Section: Picture and Basic Information -->
+        <div class="col-md-6">
+            <div class="section profile-info">
+                <div class="text-center profile-picture">
+                    <img src="img/books.jpg" class="rounded-circle" alt="Profile Picture" width="200" height="200">
+                </div>
+                <div class="mt-3">
+                    <h4 class="text-center">John Doe</h4>
+                    <p class="text-center">Email: johndoe@example.com</p>
+                    <p class="text-center">Phone: +1234567890</p>
+                </div>
+            </div>
+        </div>
+        <!-- Second Section: Additional Content -->
+        <div class="col-md-6">
+            <div class="section site-info">
+                <h4>Site Information</h4>
+                <!-- Site details -->
+                <?php
+                // Define site information
+                $site_name = "My Website";
+                $site_description = "This is a demo website.";
+                $site_location = "Anywhere, Earth";
+                ?>
+                <p>Site Name: <?php echo $site_name; ?></p>
+                <p>Description: <?php echo $site_description; ?></p>
+                <p>Location: <?php echo $site_location; ?></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
     <div class="row">
         <!-- First Section: Worker Information -->
         <div class="col-md-6">
-            <h4>Worker Information</h4>
-            <!-- Worker details -->
-            <?php
-            // Fetch worker information from database or define them
-            $worker_name = "John Doe";
-            $worker_position = "Developer";
-            $worker_email = "john@example.com";
-            ?>
-            <p>Name: <?php echo $worker_name; ?></p>
-            <p>Position: <?php echo $worker_position; ?></p>
-            <p>Email: <?php echo $worker_email; ?></p>
+            <div class="section worker-info">
+                <h4>Worker Information</h4>
+                <!-- Worker details -->
+                <?php
+                // Fetch worker information from database or define them
+                $worker_name = "John Doe";
+                $worker_position = "Developer";
+                $worker_email = "john@example.com";
+                ?>
+                <p>Name: <?php echo $worker_name; ?></p>
+                <p>Position: <?php echo $worker_position; ?></p>
+                <p>Email: <?php echo $worker_email; ?></p>
+            </div>
         </div>
         <!-- Second Section: Site Information -->
         <div class="col-md-6">
-            <h4>Site Information</h4>
-            <!-- Site details -->
-            <?php
-            // Define site information
-            $site_name = "My Website";
-            $site_description = "This is a demo website.";
-            $site_location = "Anywhere, Earth";
-            ?>
-            <p>Site Name: <?php echo $site_name; ?></p>
-            <p>Description: <?php echo $site_description; ?></p>
-            <p>Location: <?php echo $site_location; ?></p>
+            <div class="section site-info">
+                <h4>Site Information</h4>
+                <!-- Site details -->
+                <?php
+                // Define site information
+                $site_name = "My Website";
+                $site_description = "This is a demo website.";
+                $site_location = "Anywhere, Earth";
+                ?>
+                <p>Site Name: <?php echo $site_name; ?></p>
+                <p>Description: <?php echo $site_description; ?></p>
+                <p>Location: <?php echo $site_location; ?></p>
+            </div>
         </div>
     </div>
 </div>

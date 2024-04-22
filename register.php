@@ -7,6 +7,8 @@ if($user->checkLoginStatus()){
 	}
 }
 
+
+
 else{
 	$user->redirect("index.php");
 }

@@ -246,13 +246,6 @@ class user {
 	}
 
 
-	public function fetchgenre($conn){
-        $fetchgenre= $conn->prepare('SELECT * FROM table_genre') ;
-        $fetchgenre->execute();
-        return $fetchgenre;
-    }
-
-
 	}
 ?>
 
