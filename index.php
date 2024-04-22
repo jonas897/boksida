@@ -53,6 +53,8 @@ echo "
 echo "</div>";
 } ;
 
+
+
 // Center the rows
 echo "<div class='container cool'>
         <div class='row justify-content-center'>";
