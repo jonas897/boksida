@@ -46,6 +46,7 @@ echo "
     <h5 class='card-title'>book name:{$row['book_name']}</h5>
     <p class='card-text'>book author: {$row['book_author']}</p>
     <p class='card-text'> book price: {$row['book_price']}</p>
+    <a href='singlebook.php?bookid={$row['book_id']}'class='button1' >more </a>
     </div>
 </div>";
 }
@@ -63,6 +64,7 @@ foreach ($selectedBooksPop as $row) {
         <h5 class='card-title'>book name:{$row['book_name']}</h5>
         <p class='card-text'>book author: {$row['book_author']}</p>
         <p class='card-text'> book price: {$row['book_price']}</p>
+        <a href='singlebook.php?bookid={$row['book_id']}'class='button1' >more </a>
         </div>
     </div>";
 }
@@ -77,6 +79,7 @@ foreach ($selectedBooksDesc as $row) {
         <h5 class='card-title'>book name:{$row['book_name']}</h5>
         <p class='card-text'>book author: {$row['book_author']}</p>
         <p class='card-text'> book price: {$row['book_price']}</p>
+        <a href='singlebook.php?bookid={$row['book_id']}'class='button1' >more </a>
         </div>
     </div>";
 }
@@ -91,6 +94,7 @@ foreach ($selectedBooksFeatured as $row) {
             <h5 class='card-title'>book name:{$row['book_name']}</h5>
             <p class='card-text'>book author: {$row['book_author']}</p>
             <p class='card-text'> book price: {$row['book_price']}</p>
+            <a href='singlebook.php?bookid={$row['book_id']}'class='button1' >more </a>
         </div>
     </div>";
 }

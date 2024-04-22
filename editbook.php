@@ -9,10 +9,6 @@ include "header.php";
 		echo "<p>Your role number is {$_SESSION['urole']}</p>";
 		echo "<p>Your id number is {$_SESSION['uid']}</p>";
 
-		if($user->checkUserRole(5)){
-			echo "hej book edit sida check check";
-		} 
-
     if(isset($_GET['bookid'])){
       $currentCar = $_GET['bookid'];
       
