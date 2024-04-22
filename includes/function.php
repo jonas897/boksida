@@ -148,13 +148,12 @@ function createbook($conn, $bookname, $bookauthor, $bookdescription, $bookillust
     };
 
     
-        function deleteBook($conn, $car){
-        $deleteBookQuerry = $conn->prepare('UPDATE table_book SET book_status_id_fk  = 2 WHERE book_id = :cid') ;
-        $deleteBookQuerry->bindparam(':cid',$car, PDO::PARAM_INT);
-        $deleteBookQuerry->execute();
+    function deleteBook($conn, $book_id){
+        $deleteBookQuery = $conn->prepare('DELETE FROM table_book WHERE book_id = :book_id');
+        $deleteBookQuery->bindParam(':book_id', $book_id, PDO::PARAM_INT);
+        $deleteBookQuery->execute();
         return true;
     }
-
 
     function searchBooks($conn, $query) {
         // Initialize variable to store found books

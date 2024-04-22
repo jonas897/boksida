@@ -25,7 +25,7 @@ include "header.php";
             }
 
 
-			if(isset($_POST['deletecar'])){
+			if(isset($_POST['deletebook'])){
 				if (deleteBook($conn, $currentBook)){
 					header('Location:  index.php?carDeleted=1');
 				}
@@ -44,7 +44,7 @@ include "header.php";
 <h2> Are you sure you want to delete <?php echo  "{$bookData['book_name']} {$bookData['book_author']}  ?" ?></h2>
 
 <form method="POST" action="">
-    <input type="submit" name="deletecar" value="Delete">
+    <input type="submit" name="deletebook" value="Delete">
     <input type="submit" name="goback" value="no,this was a mistake">
 </form>
 
