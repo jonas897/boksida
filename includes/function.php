@@ -77,9 +77,7 @@ function createbook($conn, $bookname, $bookauthor, $bookdescription, $bookillust
             INNER JOIN table_genre
             ON table_book.genre_id_fk = table_genre.genre_id
             INNER JOIN table_language
-            ON table_book.language_id_fk = table_language.language_id
-            INNER JOIN table_book_status
-            ON table_book.book_status_id_fk = table_book_status.book_status_id');
+            ON table_book.language_id_fk = table_language.language_id');
         $selectedbooks->execute();
         
         return $selectedbooks;

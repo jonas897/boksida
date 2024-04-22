@@ -41,6 +41,7 @@ if(isset($_POST['logout-button'])){
     <ul class="navbar-nav">
 	<a class="nav-link" href="about.php">om oss</a>
 	<a class="nav-link" href="kontakt.php">kontakt sidan</a>
+	<a class="nav-link" href="books.php">more books</a>
 	<li class="nav-item">
 	</li>
     </ul>
