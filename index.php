@@ -1,24 +1,3 @@
-<style>
-    .hero-section {
-      background-image: url('img/books.jpg'); 
-      background-size: cover;
-      background-position: center;
-      color: #ffffff;
-      padding: 100px 0;
-      text-align: center;
-    }
-    .search-bar {
-      max-width: 500px;
-      margin: 0 auto;
-    }
-
- .cool {
-    background-color: #f5f5f5; /* Light grey background */
- }
-
-
-  </style>
-
 <?php
 include "header.php";
 
@@ -57,7 +36,7 @@ include "header.php";
 
 // Display the search results if available
 if (!empty($foundBooks)) {
-    echo "<div class='container cool'>
+    echo "<div class='container cool '>
     <div class='row justify-content-center'>";
 foreach ($foundBooks as $row) {
 echo "
@@ -74,7 +53,7 @@ echo "</div>";
 } ;
 
 // Center the rows
-echo "<div class='container'>
+echo "<div class='container cool'>
         <div class='row justify-content-center'>";
 foreach ($selectedBooksPop as $row) {
     echo "

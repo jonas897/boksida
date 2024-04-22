@@ -1,7 +1,15 @@
 <?php 
 include "header.php"; 
 
+if($user->checkLoginStatus()){
+	if(!$user->checkUserRole(5)){
+		$user->redirect("home.php");
+	}
+}
 
+else{
+	$user->redirect("index.php");
+}
 
 //check if form has been sent
 if(isset($_POST['submit_register'])) {
@@ -56,9 +64,7 @@ if(isset($_POST['submit_register'])) {
   </div>
   <!-- Submit button -->
   <button type="submit" name="submit_register" class="rainbow btn btn-primary btn-block mb-4 button-85" role="button">Register</button>
-    <div class="text-center">
-    <p>Aleady a member? <a href="index.php">Login</a></p>
-  </div>
+
   </div>
 
 </form>

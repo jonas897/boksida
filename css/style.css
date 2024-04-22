@@ -1,57 +1,57 @@
 .navbar {
-    background-color: #999; /* Grey background color */
-  }
-  
-  .navbar-brand, .nav-link {
-    color: #fff !important; /* White text color */
-  }
-  
-  /* Toggle button color */
-  .navbar-toggler {
-    border-color: #fff; /* White border color */
-  }
-  
-  .navbar-toggler-icon {
-    background-color: #fff; /* White background color for the toggler icon */
-  }
-  
-  /* Dropdown menu background color and text color */
-  .navbar-nav .dropdown-menu {
-    background-color: #999; /* Grey background color */
-  }
-  
-  .navbar-nav .dropdown-menu .dropdown-item {
-    color: #fff !important; /* White text color */
-  }
-  
-  /* Active link color */
-  .navbar-nav .nav-item.active .nav-link {
-    color: #fff !important; /* White text color for active link */
-  }
-  
-  /* Logout button style */
-  #logout {
-    margin-right: 10px; /* Add margin to the logout link */
-  }
-  
-  /* Optional: Adjust padding and margins */
-  .navbar-nav .nav-item {
-    margin-right: 10px; /* Add margin between nav items */
-  }
-  
-  .navbar-nav .nav-link {
-    padding: 10px; /* Add padding to nav links */
-  }
+  background-color: #999; /* Grey background color */
+}
+
+.navbar-brand, .nav-link {
+  color: #fff !important; /* White text color */
+}
+
+/* Toggle button color */
+.navbar-toggler {
+  border-color: #fff; /* White border color */
+}
+
+.navbar-toggler-icon {
+  background-color: #fff; /* White background color for the toggler icon */
+}
+
+/* Dropdown menu background color and text color */
+.navbar-nav .dropdown-menu {
+  background-color: #999; /* Grey background color */
+}
+
+.navbar-nav .dropdown-menu .dropdown-item {
+  color: #fff !important; /* White text color */
+}
+
+/* Active link color */
+.navbar-nav .nav-item.active .nav-link {
+  color: #fff !important; /* White text color for active link */
+}
+
+/* Logout button style */
+#logout {
+  margin-right: 10px; /* Add margin to the logout link */
+}
+
+/* Optional: Adjust padding and margins */
+.navbar-nav .nav-item {
+  margin-right: 10px; /* Add margin between nav items */
+}
+
+.navbar-nav .nav-link {
+  padding: 10px; /* Add padding to nav links */
+}
 
 
-  .hero-section {
-    background-image: url('img/books.jpg'); 
-    background-size: cover;
-    background-position: center;
-    color: #ffffff;
-    padding: 100px 0;
-    text-align: center;
-  }
+.hero-section {
+  background-image: url('img/books.jpg'); 
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  padding: 100px 0;
+  text-align: center;
+}
 
 
 
@@ -59,39 +59,37 @@
 
 
 #container {
-    margin-top: 50px; /* Add some top margin */
-  }
-  
-  #floatmid {
-    background-color: #f8f9fa; /* Light background color */
-    padding: 20px; /* Add padding */
-    border-radius: 10px; /* Add border radius */
-  }
-  
-  h1 {
-    text-align: center; /* Center align heading */
-  }
-  
-  .form-outline {
-    margin-bottom: 20px; /* Add bottom margin */
-  }
-  
-  .form-label {
-    color: #495057; /* Label text color */
-  }
-  
-  .btn-primary {
-    background-color: #007bff; /* Primary button background color */
-    border-color: #007bff; /* Primary button border color */
-  }
-  
-  .btn-primary:hover {
-    background-color: #0056b3; /* Darker background color on hover */
-    border-color: #0056b3; /* Darker border color on hover */
-  }
-  
-  .btn-block {
-    width: 100%; /* Make button full width */
-  }
+  margin-top: 50px; /* Add some top margin */
+}
 
+#floatmid {
+  background-color: #f8f9fa; /* Light background color */
+  padding: 20px; /* Add padding */
+  border-radius: 10px; /* Add border radius */
+}
 
+h1 {
+  text-align: center; /* Center align heading */
+}
+
+.form-outline {
+  margin-bottom: 20px; /* Add bottom margin */
+}
+
+.form-label {
+  color: #495057; /* Label text color */
+}
+
+.btn-primary {
+  background-color: #007bff; /* Primary button background color */
+  border-color: #007bff; /* Primary button border color */
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Darker background color on hover */
+  border-color: #0056b3; /* Darker border color on hover */
+}
+
+.btn-block {
+  width: 100%; /* Make button full width */
+}

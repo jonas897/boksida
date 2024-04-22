@@ -3,18 +3,21 @@ include "includes/class_user.php";
 include "includes/config.php";
 include "includes/function.php";
 
+
+
 if(isset($_POST['logout-button'])){
 	if($user->logout()){
 		$user->redirect ("index.php");
 	}
 }
+
 ?>
 
 
 
 <head>
 
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="styles.css">
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -37,7 +40,6 @@ if(isset($_POST['logout-button'])){
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
 	<li class="nav-item">
-        <a class="nav-link text-white linkcolor" href="register.php">Register</a>
 	</li>
     </ul>
   </div>
@@ -49,8 +51,14 @@ if(isset($_POST['logout-button'])){
 	<input type="submit" name="logout-button" value="logout" role="button" class="button-92 me-2">
 	
 		<?php 
+
+if($user->checkUserRole(1)){
+	echo "<a href='createbook.php' class='btn btn-primary mx-3'>crete books</a>";
+}
+
 		if($user->checkUserRole(5)){
-			echo "<button class='button-57' role='button'><a href='admin.php'></a><span class='text' id='bcnotpink'>admin page</span><span id='bcpink'>admin page</span></button>";
+			echo "<a href='admin.php' class='btn btn-primary mx-3'>Go to Admin</a>";
+			echo "<a href='register.php' class='btn btn-primary'>create new user </a>";
 		}
 	
 	} 
