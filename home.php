@@ -50,7 +50,6 @@ foreach ($selectedbooks as $row) {
     <div class='card-body'>
       <h5 class='card-title'>{$row['book_name']}</h5>
       <p class='card-text'>{$row['book_author']}</p>
-	  <p class='card-text'>{$row['book_status_name']}</p>
     </div>
     <a href='editbook.php?bookid={$row['book_id']}' class='button1'>edit book </a>
     <a href='deletbook.php?bookid={$row['book_id']}'class='button1 red' >Delete </a>

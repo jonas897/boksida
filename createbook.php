@@ -1,102 +1,82 @@
-<?php
-include "header.php";
+<?php include "header.php"; ?>
 
-	if(!$user->checkLoginStatus()){
-		$user->redirect("index.php");
-	}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <?php
+            if (!$user->checkLoginStatus()) {
+                $user->redirect("index.php");
+            }
 
-		echo"<h2>Hello {$_SESSION['uname']}</h2>";
-		echo "<p>Your role number is {$_SESSION['urole']}</p>";
-		echo "<p>Your id number is {$_SESSION['uid']}</p>";
+            if ($user->checkUserRole(5)) {
+                echo "<h2 class='text-center mb-4'>Create Book</h2>";
+            }
 
-		if($user->checkUserRole(5)){
-			echo "hej";
-		} 
+            if (isset($_POST['form-submit'])) {
+                createbook($conn, $_POST['bookname'], $_POST['bookauthor'], $_POST['bookdescription'], $_POST['bookillustrator'], $_POST['bookage'], $_POST['bookgenre'],
+                    $_POST['booklanguage'], $_POST['bookpages'], $_POST['bookprice'], $_POST['bookcreated'],
+                    $_FILES['bookcover']['name']);
+            }
+            ?>
 
-		if (isset($_POST['form-submit'])){
+            <form method="post" enctype="multipart/form-data">
 
-			
-			createbook($conn, $_POST['bookname'], $_POST['bookauthor'],$_POST['bookdescription'], $_POST['bookillustrator'], $_POST['bookage'], $_POST['bookgenre'],
-			$_POST['booklanguage'],$_POST['bookpages'], $_POST['bookprice'], $_POST['bookcreated'],
-			$_FILES['bookcover']['name']);
-	
-		}
+                <div class="person-info">
 
+                    <label for="bookname">Book Name</label><br>
+                    <input type="text" id="bookname" name="bookname" class="form-control mb-3" required>
 
+                    <label for="bookauthor">Book Author</label><br>
+                    <input type="text" id="bookauthor" name="bookauthor" class="form-control mb-3" required>
 
-        
+                    <label for="bookdescription">Book Description</label><br>
+                    <input type="text" id="bookdescription" name="bookdescription" class="form-control mb-3" required>
 
+                    <label for="bookillustrator">Book Illustrator</label><br>
+                    <input type="text" id="bookillustrator" name="bookillustrator" class="form-control mb-3">
 
-?>
+                    <label for="bookage">Book Age</label><br>
+                    <input type="date" id="bookage" name="bookage" class="form-control mb-3" required>
 
-<form method="post" enctype="multipart/form-data" class="row" >
+                    <label for="bookgenre">Book Genre</label><br>
+                    <select name="bookgenre" id="bookgenre" class="form-control mb-3">
+                        <?php
+                        $allgenretype = fetchgenre($conn);
+                        foreach ($allgenretype as $row) {
+                            echo "<option value='{$row['genre_id']}'>{$row['genre_name']}</option>";
+                        }
+                        ?>
+                    </select>
 
+                    <label for="booklanguage">Book Language</label><br>
+                    <select name="booklanguage" id="booklanguage" class="form-control mb-3">
+                        <?php
+                        $alllanguage = fetchlanguage($conn);
+                        foreach ($alllanguage as $row) {
+                            echo "<option value='{$row['language_id']}'>{$row['language_name']}</option>";
+                        }
+                        ?>
+                    </select>
 
+                    <label for="bookpages">Book Pages</label><br>
+                    <input type="text" id="bookpages" name="bookpages" class="form-control mb-3" required>
 
+                    <label for="bookprice">Book Price</label><br>
+                    <input type="text" id="bookprice" name="bookprice" class="form-control mb-3" required>
 
+                    <label for="bookcreated">Book Created</label><br>
+                    <input type="date" id="bookcreated" name="bookcreated" class="form-control mb-3" required>
 
+                    <label for="bookcover">Book Cover</label><br>
+                    <input type="file" id="bookcover" name="bookcover" class="form-control mb-3" required>
 
-<div class="col">
+                    <input type="submit" name="form-submit" value="Submit" class="btn btn-primary">
+                </div>
 
-<div class="person-info">
+            </form>
 
-<h2> About </h2>
-
-    <label for="bookname">book name</label><br>
-    <input type="text" id="bookname" name="bookname" value="" class="formlabel"><br>
-
-    <label for="bookauthor">book author</label><br>
-    <input type="text" id="bookauthor" name="bookauthor" value="" class="formlabel"><br>
-
-    <label for="bookdescription">book description</label><br>
-    <input type="text" id="bookdescription" name="bookdescription" value="" class="formlabel"><br>
-
-    <label for="bookillustrator">book illustrator</label><br>
-    <input type="text" id="bookillustrator" name="bookillustrator" value="" class="formlabel"><br>
-
-    <label for="bookage">book age</label><br>
-    <input type="date" id="bookage" name="bookage" value="" class="formlabel"><br>
-
-	<label for="bookgenre">book genre</label><br>
-    <select name="bookgenre" id="bookgenre" class="bookgenre"> <br>
-        
-    <?php
-        $allgenretype = fetchgenre($conn); 
-        foreach($allgenretype as $row){
-            echo "<option value='{$row['genre_id']}'>{$row['genre_name']}</option>" ;
-        }
-    ?>
-    </select>
-<br>
-
-<label for="booklanguage">book language</label><br>
-    <select name="booklanguage" id="booklanguage" class="booklanguage"> <br>
-        
-    <?php
-        $alllanguage = fetchlanguage($conn); 
-        foreach($alllanguage as $row){
-            echo "<option value='{$row['language_id']}'>{$row['language_name']}</option>" ;
-        }
-    ?>
-    </select>
-<br>
-	<label for="bookpages">book pages</label><br>
-    <input type="text" id="bookpages" name="bookpages" value="" class="formlabel"><br>
-
-	<label for="bookprice">book price</label><br>
-    <input type="text" id="bookprice" name="bookprice" value="" class="formlabel"><br>
-
-	<label for="bookcreated">book created</label><br>
-    <input type="date" id="bookcreated" name="bookcreated" value="" class="formlabel"><br>
-
-	<label for="bookcover">bookcover</label><br>
-    <input type="file" id="bookcover" name="bookcover" value="" class="formlabel"><br>
-
-	<input type="submit" name="form-submit" value="Submit" class="button">
-
+        </div>
+    </div>
 </div>
 
-</div>
-
-</form>
-
+<?php include "footer.php"; ?>

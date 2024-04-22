@@ -24,12 +24,7 @@ if(isset($_POST['searchuser_submit'])){
 ?>
 </div>
 <div class="content-inner">
-	<?php 
-	echo "<h2>Välkommen " . $_SESSION["uname"] . "</h2>"; 
-	echo "<h3>Du har användarroll " . $_SESSION["urole"] . " och din id är " .$_SESSION["uid"]."</h3>"; 
-	
-	?>
-
+		
 	<form method="POST" action="">
 		<label for="searchinput">Search for user to edit</label><br>
 		  <input type="text" id="search_username" name="search_username" placeholder="Enter username here"><br>
