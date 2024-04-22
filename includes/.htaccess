@@ -1,0 +1,3 @@
+<FilesMatch "^(function|class_role|config|class_user)\.php$">
+    Deny from all
+</FilesMatch>   
